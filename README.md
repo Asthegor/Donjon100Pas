@@ -1,4 +1,4 @@
-La Grotte aux 100 Pas est un micro-RPG roguelite en 2D. Le joueur doit traverser des donjons linéaires de 100 cases, où chaque pas déclenche un événement unique.
+Le Donjon aux 100 Pas est un micro-RPG roguelite en 2D. Le joueur doit traverser des donjons linéaires de 100 cases, où chaque pas déclenche un événement unique.
 Ce projet est conçu pour offrir une expérience de jeu courte (20-30 minutes par run) mais hautement rejouable grâce à sa génération procédurale.
 
 
