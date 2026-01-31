@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="JUNK_TATTEREDCLOTH" xml:space="preserve">
+    <value>Tattered Cloth</value>
+  </data>
+  <data name="JUNK_RUSTYCHESTPLATE" xml:space="preserve">
+    <value>Rusty Chestplate</value>
+  </data>
+  <data name="JUNK_MOLDYLEATHER" xml:space="preserve">
+    <value>Moldy Leather</value>
+  </data>
+  <data name="JUNK_ROTTENWOODSHIELD" xml:space="preserve">
+    <value>Rotten Wood Shield</value>
+  </data>
+  <data name="JUNK_BROKENCHAINMAIL" xml:space="preserve">
+    <value>Broken Chainmail</value>
+  </data>
+  <data name="JUNK_PATCHEDPANTS" xml:space="preserve">
+    <value>Patched Pants</value>
+  </data>
+  <data name="JUNK_IMPROVISEDHELMET" xml:space="preserve">
+    <value>Improvised Helmet</value>
+  </data>
+  <data name="JUNK_THINRAGS" xml:space="preserve">
+    <value>Thin Rags</value>
+  </data>
+  <data name="JUNK_CRACKEDBUCKLER" xml:space="preserve">
+    <value>Cracked Buckler</value>
+  </data>
+  <data name="JUNK_DIRTYCLOAK" xml:space="preserve">
+    <value>Dirty Cloak</value>
+  </data>
+  <data name="COMMON_LEATHERVEST" xml:space="preserve">
+    <value>Leather Vest</value>
+  </data>
+  <data name="COMMON_IRONHELMET" xml:space="preserve">
+    <value>Iron Helmet</value>
+  </data>
+  <data name="COMMON_GUARDARMOUR" xml:space="preserve">
+    <value>Guard Armour</value>
+  </data>
+  <data name="COMMON_BRONZEBRACERS" xml:space="preserve">
+    <value>Bronze Bracers</value>
+  </data>
+  <data name="COMMON_PADDEDJACKET" xml:space="preserve">
+    <value>Padded Jacket</value>
+  </data>
+  <data name="COMMON_SOLDIERBOOTS" xml:space="preserve">
+    <value>Soldier Boots</value>
+  </data>
+  <data name="COMMON_LIGHTSHIELD" xml:space="preserve">
+    <value>Light Shield</value>
+  </data>
+  <data name="COMMON_STUDDEDBELT" xml:space="preserve">
+    <value>Studded Belt</value>
+  </data>
+  <data name="COMMON_CHAINMAILCOIF" xml:space="preserve">
+    <value>Chainmail Coif</value>
+  </data>
+  <data name="COMMON_REINFORCEDGLOVES" xml:space="preserve">
+    <value>Reinforced Gloves</value>
+  </data>
+  <data name="UNCOMMON_STEELBREASTPLATE" xml:space="preserve">
+    <value>Steel Breastplate</value>
+  </data>
+  <data name="UNCOMMON_HARDENEDLEATHER" xml:space="preserve">
+    <value>Hardened Leather</value>
+  </data>
+  <data name="UNCOMMON_VETERANHELMET" xml:space="preserve">
+    <value>Veteran Helmet</value>
+  </data>
+  <data name="UNCOMMON_KNIGHTGAUNTLETS" xml:space="preserve">
+    <value>Knight Gauntlets</value>
+  </data>
+  <data name="UNCOMMON_SCOUTCLOAK" xml:space="preserve">
+    <value>Scout Cloak</value>
+  </data>
+  <data name="RARE_MITHRILCHAINMAIL" xml:space="preserve">
+    <value>Mithril Chainmail</value>
+  </data>
+  <data name="RARE_ENCHANTEDROBES" xml:space="preserve">
+    <value>Enchanted Robes</value>
+  </data>
+  <data name="RARE_DRAGONSCALESHIELD" xml:space="preserve">
+    <value>Dragon Scale Shield</value>
+  </data>
+  <data name="RARE_CELESTIALCROWN" xml:space="preserve">
+    <value>Celestial Crown</value>
+  </data>
+  <data name="ELITE_AETHERPLATE" xml:space="preserve">
+    <value>Aether Plate</value>
+  </data>
+  <data name="ELITE_PHOENIXEMBRACE" xml:space="preserve">
+    <value>Phoenix Embrace</value>
+  </data>
+  <data name="ELITE_VOIDSTALKERGARB" xml:space="preserve">
+    <value>Void Stalker Garb</value>
+  </data>
+  <data name="DEFAULTARMOR" xml:space="preserve">
+    <value>Linen Shirt</value>
+  </data>
+</root>

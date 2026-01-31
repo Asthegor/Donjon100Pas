@@ -1,0 +1,113 @@
+﻿using DinaCSharp.Resources;
+using DinaCSharp.Services;
+
+using Donjon_100_Pas.Core.Keys;
+
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Donjon_100_Pas.Core.Datas.Items
+{
+    public static class PotionFactory
+    {
+        private static readonly int STACK_LIMIT = 10;
+        private static readonly Random _random = new();
+        private static ResourceManager? _resourceManager;
+        private static List<(int Weight, Potion Potion)> _allPotions = [];
+        private static bool _initialized;
+
+        // Événement pour notifier la progression
+        public static event EventHandler<PotionLoadProgressEventArgs>? OnPotionLoaded;
+
+        // Propriétés pour suivre la progression
+        public static int TotalPotionsToLoad { get; private set; }
+        public static int PotionsLoaded { get; private set; }
+
+        public static void Initialize()
+        {
+            if (_initialized) return;
+
+            PotionsLoaded = 0;
+            TotalPotionsToLoad = KeyCounter.Count(typeof(PotionKeys)) - 1;
+
+            _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.GameResourceManager)
+                ?? throw new NullReferenceException("GameResourceManager not found");
+
+            AddPotions();
+
+            _initialized = true;
+        }
+
+        public static Potion Get()
+        {
+            if (!_initialized)
+                throw new InvalidOperationException("PotionFactory not initialized.");
+
+            int totalWeigth = _allPotions.Sum(w => w.Weight);
+
+            int roll = _random.Next(0, totalWeigth);
+            int cursor = 0;
+            foreach (var potion in _allPotions)
+            {
+                cursor += potion.Weight;
+                if (roll < cursor)
+                    return potion.Potion;
+            }
+            return _allPotions.First().Potion;
+        }
+
+
+        private static void AddPotions()
+        {
+            var prefix = "POTION";
+            _allPotions =
+            [
+                (45, CreatePotion(PotionKeys.MinorHealth,
+                                 $"{prefix}_{nameof(PotionKeys.MinorHealth).ToUpperInvariant()}",
+                                 [
+                                    new Bonus(BonusType.Health, "BONUS_HEALTH", percentage: 25)
+                                 ],
+                                 STACK_LIMIT)),
+                (20, CreatePotion(PotionKeys.Mana,
+                                 $"{prefix}_{nameof(PotionKeys.Mana).ToUpperInvariant()}",
+                                 [
+                                    new Bonus(BonusType.Mana, "BONUS_MANA", 60)
+                                 ],
+                                 STACK_LIMIT)),
+                (25, CreatePotion(PotionKeys.Health,
+                                 $"{prefix}_{nameof(PotionKeys.Health).ToUpperInvariant()}",
+                                 [
+                                    new Bonus(BonusType.Health, "BONUS_HEALTH", percentage: 50)
+                                 ],
+                                 STACK_LIMIT)),
+                (10, CreatePotion(PotionKeys.LargeHealth,
+                                 $"{prefix}_{nameof(PotionKeys.LargeHealth).ToUpperInvariant()}",
+                                 [
+                                    new Bonus(BonusType.Health, "BONUS_HEALTH", percentage: 80)
+                                 ],
+                                 STACK_LIMIT)),
+            ];
+        }
+        private static Potion CreatePotion(Key<ResourceTag> key, string name, List<Bonus> bonuses, int stacklimit)
+        {
+            Potion potion = new Potion(name, _resourceManager!.Load<Texture2D>(key)!, bonuses, stacklimit);
+            NotifyProgress();
+            return potion;
+        }
+        private static void NotifyProgress()
+        {
+            PotionsLoaded++;
+            OnPotionLoaded?.Invoke(null, new PotionLoadProgressEventArgs(PotionsLoaded, TotalPotionsToLoad));
+        }
+        public static void ClearEventSubscribers()
+        {
+            OnPotionLoaded = null;
+        }
+    }
+    // Classe EventArgs pour l'événement de progression
+    public class PotionLoadProgressEventArgs(int potionsLoaded, int totalPotions) : EventArgs
+    {
+        public int PotionsLoaded { get; } = potionsLoaded;
+        public int TotalPotions { get; } = totalPotions;
+        public float Progress => TotalPotions > 0 ? (float)PotionsLoaded / TotalPotions : 0f;
+    }
+}

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="COMMON_BASICMORNINGSTAR" xml:space="preserve">
+    <value>Morgenstern basique</value>
+  </data>
+  <data name="COMMON_GUARDSPEAR" xml:space="preserve">
+    <value>Lance de garde</value>
+  </data>
+  <data name="COMMON_HUNTINGLONGBOW" xml:space="preserve">
+    <value>Arc long de chasse</value>
+  </data>
+  <data name="COMMON_INFANTRYPIKE" xml:space="preserve">
+    <value>Pique d'infanterie</value>
+  </data>
+  <data name="COMMON_IRONGLADIUS" xml:space="preserve">
+    <value>Glaive en fer</value>
+  </data>
+  <data name="COMMON_IRONSHODSTAFF" xml:space="preserve">
+    <value>Bâton de marche ferré</value>
+  </data>
+  <data name="COMMON_LIGHTRAPIER" xml:space="preserve">
+    <value>Rapière légère</value>
+  </data>
+  <data name="COMMON_MILITIASHORTSWORD" xml:space="preserve">
+    <value>Épée courte de milicien</value>
+  </data>
+  <data name="COMMON_NOMADSCIMITAR" xml:space="preserve">
+    <value>Cimetierre de nomade</value>
+  </data>
+  <data name="COMMON_PEASANTBILLHOOK" xml:space="preserve">
+    <value>Vouge de paysan</value>
+  </data>
+  <data name="COMMON_PRECISIONSLING" xml:space="preserve">
+    <value>Fronde de précision</value>
+  </data>
+  <data name="COMMON_SAILORCUTLASS" xml:space="preserve">
+    <value>Coutelas de marin</value>
+  </data>
+  <data name="COMMON_SIMPLEMACE" xml:space="preserve">
+    <value>Masse d'arme simple</value>
+  </data>
+  <data name="COMMON_SMITHINGHAMMER" xml:space="preserve">
+    <value>Marteau de forge</value>
+  </data>
+  <data name="COMMON_SPIKEDCLUB" xml:space="preserve">
+    <value>Gourdin clouté</value>
+  </data>
+  <data name="COMMON_STEELDAGGER" xml:space="preserve">
+    <value>Dague en acier</value>
+  </data>
+  <data name="COMMON_THROWINGHATCHET" xml:space="preserve">
+    <value>Hachette de jet</value>
+  </data>
+  <data name="COMMON_WOODMANAXE" xml:space="preserve">
+    <value>Hache de bûcheron</value>
+  </data>
+  <data name="COMMON_WORNBASTARDSWORD" xml:space="preserve">
+    <value>Épée bâtarde usée</value>
+  </data>
+  <data name="COMMON_YEWSHORTBOW" xml:space="preserve">
+    <value>Arc court en if</value>
+  </data>
+  <data name="JUNK_BENDPOKER" xml:space="preserve">
+    <value>Tisonnier tordu</value>
+  </data>
+  <data name="JUNK_BROKENPICKAXEHANDLE" xml:space="preserve">
+    <value>Manche de pioche brisé</value>
+  </data>
+  <data name="JUNK_DULLKITCHENKNIFE" xml:space="preserve">
+    <value>Couteau de cuisine émoussé</value>
+  </data>
+  <data name="JUNK_LARGEMAMMALBONE" xml:space="preserve">
+    <value>Os de grand mammifère</value>
+  </data>
+  <data name="JUNK_POTLID" xml:space="preserve">
+    <value>Couvercle de marmite</value>
+  </data>
+  <data name="JUNK_RUSTYDAGGER" xml:space="preserve">
+    <value>Dague rouillée</value>
+  </data>
+  <data name="JUNK_SHARPENEDBRANCH" xml:space="preserve">
+    <value>Branche pointue</value>
+  </data>
+  <data name="JUNK_STONECLUB" xml:space="preserve">
+    <value>Gourdin en pierre</value>
+  </data>
+  <data name="JUNK_WOODENTRAININGSWORD" xml:space="preserve">
+    <value>Épée d'entrainement en bois</value>
+  </data>
+  <data name="JUNK_WORNLEATHERSLING" xml:space="preserve">
+    <value>Fronde en cuir usé</value>
+  </data>
+  <data name="UNCOMMON_COMPOSITEBOW" xml:space="preserve">
+    <value>Arc composite</value>
+  </data>
+  <data name="UNCOMMON_DOUBLEEDGEDBATTLEAXE" xml:space="preserve">
+    <value>Hache de bataille à double tranchant</value>
+  </data>
+  <data name="UNCOMMON_DUELISTESTOC" xml:space="preserve">
+    <value>Estoc de duelliste</value>
+  </data>
+  <data name="UNCOMMON_GLADIATORTRIDENT" xml:space="preserve">
+    <value>Trident de gladiateur</value>
+  </data>
+  <data name="UNCOMMON_GREATWARHAMMER" xml:space="preserve">
+    <value>Grand marteau de guerre</value>
+  </data>
+  <data name="UNCOMMON_HARDENEDSTEELLONGSWORD" xml:space="preserve">
+    <value>Épée longue en acier trempé</value>
+  </data>
+  <data name="UNCOMMON_OFFICERSPEAR" xml:space="preserve">
+    <value>Lance d'officier</value>
+  </data>
+  <data name="UNCOMMON_OFFICIERSABER" xml:space="preserve">
+    <value>Sabre d'officier</value>
+  </data>
+  <data name="UNCOMMON_RANGERBOW" xml:space="preserve">
+    <value>Arc de garde forestier</value>
+  </data>
+  <data name="UNCOMMON_REINFORCEDHALBERD" xml:space="preserve">
+    <value>Hallebarde renforcée</value>
+  </data>
+  <data name="UNCOMMON_TEMPLARHEAVYMACE" xml:space="preserve">
+    <value>Masse lourde de templier</value>
+  </data>
+  <data name="UNCOMMON_THIEFDAGGER" xml:space="preserve">
+    <value>Dague de voleur</value>
+  </data>
+  <data name="UNCOMMON_FLAIL" xml:space="preserve">
+    <value>Fléau d'armes</value>
+  </data>
+  <data name="UNCOMMON_CLAYMORE" xml:space="preserve">
+    <value>Claymore</value>
+  </data>
+  <data name="UNCOMMON_HANDCROSSBOW" xml:space="preserve">
+    <value>Arbalète de poing</value>
+  </data>
+  <data name="RARE_MITHRILBLADE" xml:space="preserve">
+    <value>Lame de Mithril</value>
+  </data>
+  <data name="RARE_EBONYWOODBOW" xml:space="preserve">
+    <value>Arc en bois d'ébène</value>
+  </data>
+  <data name="RARE_THUNDERHANNER" xml:space="preserve">
+    <value>Marteau de foudre</value>
+  </data>
+  <data name="RARE_ASSASSINDIRK" xml:space="preserve">
+    <value>Dague de l'assassin</value>
+  </data>
+  <data name="RARE_RUNICAXE" xml:space="preserve">
+    <value>Hache runique</value>
+  </data>
+  <data name="RARE_FROSTSPEAR" xml:space="preserve">
+    <value>Lance de givre</value>
+  </data>
+  <data name="RARE_GLOWINGJUSTICESWORD" xml:space="preserve">
+    <value>Épée de Justice étincelante</value>
+  </data>
+  <data name="RARE_FIREFLAIL" xml:space="preserve">
+    <value>Fléau de feu</value>
+  </data>
+  <data name="RARE_HEAVYSIEGECROSSBOW" xml:space="preserve">
+    <value>Arbalète lourde de siège</value>
+  </data>
+  <data name="RARE_MASTERKATANA" xml:space="preserve">
+    <value>Katana de maître</value>
+  </data>
+  <data name="ELITE_AGONIZER" xml:space="preserve">
+    <value>L'Agonisante</value>
+  </data>
+  <data name="ELITE_MOUNTAINBREAKER" xml:space="preserve">
+    <value>Brise-Montagne</value>
+  </data>
+  <data name="ELITE_DRAGONBREATH" xml:space="preserve">
+    <value>Le Souffle du Dragon</value>
+  </data>
+  <data name="ELITE_ECLIPSESHARD" xml:space="preserve">
+    <value>L'Éclat de l'Éclipse</value>
+  </data>
+  <data name="ELITE_DOOMSDAY" xml:space="preserve">
+    <value>Jugement Dernier</value>
+  </data>
+  <data name="DEFAULTWEAPON" xml:space="preserve">
+    <value>Mains nues</value>
+  </data>
+</root>
