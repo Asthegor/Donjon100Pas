@@ -1,8 +1,8 @@
-﻿using Donjon_100_Pas.Core.Datas.Items;
+﻿using Dungeon100Steps.Core.Datas.Items;
 
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.Core.Datas.Characters
+namespace Dungeon100Steps.Core.Datas.Characters
 {
     public abstract class Character(string name, Texture2D texture, int attack, int defense, int health, int mana)
         : IDisposable

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>Donjon_100_Pas.UI</RootNamespace>
+    <RootNamespace>Dungeon100Steps.UI</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="UIContent\obj\**" />

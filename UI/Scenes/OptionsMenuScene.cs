@@ -10,8 +10,8 @@ using DinaCSharp.Services.Save;
 using DinaCSharp.Services.Scenes;
 using DinaCSharp.Services.Screen;
 
-using Donjon_100_Pas.Core.Datas;
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core.Datas;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -20,7 +20,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Linq;
 
-namespace Donjon_100_Pas.UI.Scenes
+namespace Dungeon100Steps.UI.Scenes
 {
     public class OptionsMenuScene(SceneManager sceneManager) : Scene(sceneManager)
     {

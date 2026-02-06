@@ -1,12 +1,12 @@
 ﻿using DinaCSharp.Resources;
 using DinaCSharp.Services;
 
-using Donjon_100_Pas.Core.Datas.Enemies;
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core.Datas.Enemies;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.Core.Datas.Characters
+namespace Dungeon100Steps.Core.Datas.Characters
 {
     public class EnemyFactory
     {

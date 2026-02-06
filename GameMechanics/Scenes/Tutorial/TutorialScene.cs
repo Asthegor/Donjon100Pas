@@ -5,18 +5,18 @@ using DinaCSharp.Resources;
 using DinaCSharp.Services;
 using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core;
-using Donjon_100_Pas.Core.Datas.Dungeons;
-using Donjon_100_Pas.Core.Datas.Events;
-using Donjon_100_Pas.Core.Keys;
-using Donjon_100_Pas.GameMechanics.Scenes.Events;
+using Dungeon100Steps.Core;
+using Dungeon100Steps.Core.Datas.Dungeons;
+using Dungeon100Steps.Core.Datas.Events;
+using Dungeon100Steps.Core.Keys;
+using Dungeon100Steps.GameMechanics.Scenes.Events;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using System;
 
-namespace Donjon_100_Pas.GameMechanics.Scenes.Tutorial
+namespace Dungeon100Steps.GameMechanics.Scenes.Tutorial
 {
     // Note : Utilisez la propriété 'SceneManager' (héritée) pour accéder au moteur.
     // Ne capturez pas le paramètre 'sceneManager' dans les méthodes pour éviter l'erreur CS9107.
@@ -27,7 +27,7 @@ namespace Donjon_100_Pas.GameMechanics.Scenes.Tutorial
         private readonly Vector2 NEXT_BUTTON_DIMENSIONS = new Vector2();
         private readonly Vector2 NEXT_BUTTON_OFFSET = new Vector2(20, 20);
 
-        private ResourceManager _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.GameResourceManager);
+        private ResourceManager _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.AssetsResourceManager);
 
         private SceneManager _tutorialSceneManager;
         private bool _loadingFinished;

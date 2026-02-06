@@ -1,6 +1,6 @@
-﻿using Donjon_100_Pas.Core.Datas.Items;
+﻿using Dungeon100Steps.Core.Datas.Items;
 
-namespace Donjon_100_Pas.Core.Datas.Loot
+namespace Dungeon100Steps.Core.Datas.Loot
 {
     public class LootFactory<T> where T : Item
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Donjon_100_Pas.Core.Resources {
+namespace Dungeon100Steps.Core.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Donjon_100_Pas.Core.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Donjon_100_Pas.Core.Resources.Armors", typeof(Armors).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Dungeon100Steps.Core.Resources.Armors", typeof(Armors).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

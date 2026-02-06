@@ -1,6 +1,6 @@
-﻿using Donjon_100_Pas.Core.Datas.Events;
+﻿using Dungeon100Steps.Core.Datas.Events;
 
-namespace Donjon_100_Pas.Core.Datas.Dungeons
+namespace Dungeon100Steps.Core.Datas.Dungeons
 {
     public class Dungeon(Event[] events)
     {

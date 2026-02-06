@@ -1,10 +1,10 @@
 ﻿using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core.Keys;
-using Donjon_100_Pas.GameMechanics.Scenes;
-using Donjon_100_Pas.UI.Scenes;
+using Dungeon100Steps.Core.Keys;
+using Dungeon100Steps.GameMechanics.Scenes;
+using Dungeon100Steps.UI.Scenes;
 
-namespace Donjon_100_Pas.UI
+namespace Dungeon100Steps.UI
 {
     public static class UISceneRegistry
     {

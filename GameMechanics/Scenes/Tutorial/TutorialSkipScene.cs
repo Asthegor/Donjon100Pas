@@ -6,12 +6,12 @@ using DinaCSharp.Services;
 using DinaCSharp.Services.Fonts;
 using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.GameMechanics.Scenes.Tutorial
+namespace Dungeon100Steps.GameMechanics.Scenes.Tutorial
 {
     // Note : Utilisez la propriété 'SceneManager' (héritée) pour accéder au moteur.
     // Ne capturez pas le paramètre 'sceneManager' dans les méthodes pour éviter l'erreur CS9107.
@@ -100,7 +100,7 @@ namespace Donjon_100_Pas.GameMechanics.Scenes.Tutorial
         }
         private void LaunchGame(Button button)
         {
-            SceneManager.SetCurrentScene(ProjectSceneKeys.CityScene);
+            SceneManager.SetCurrentScene(ProjectSceneKeys.SelectPlayerScene);
         }
         private static void OnHoverYesButton(Button button)
         {

@@ -5,7 +5,7 @@
     <RollForward>Major</RollForward>
     <PublishReadyToRun>false</PublishReadyToRun>
     <TieredCompilation>false</TieredCompilation>
-    <RootNamespace>Donjon_100_Pas</RootNamespace>
+    <RootNamespace>Dungeon100Steps</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -30,7 +30,7 @@
   <ItemGroup>
     <MonoGameContentReference Include="..\Audio\AudioContent\AudioContent.mgcb" />
     <MonoGameContentReference Include="..\Fonts\FontContent\FontContent.mgcb" />
-    <MonoGameContentReference Include="..\GameMechanics\GameContent\GameContent.mgcb" />
+    <MonoGameContentReference Include="..\Assets\AssetsContent\AssetsContent.mgcb" />
     <MonoGameContentReference Include="..\UI\UIContent\UIContent.mgcb" />
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +39,7 @@
     <ProjectReference Include="..\Fonts\Fonts.csproj" />
     <ProjectReference Include="..\UI\UI.csproj" />
     <ProjectReference Include="..\Audio\Audio.csproj" />
+    <ProjectReference Include="..\Assets\Assets.csproj" />
     <ProjectReference Include="..\GameMechanics\GameMechanics.csproj" />
   </ItemGroup>
   <Target Name="RestoreDotnetTools" BeforeTargets="Restore">

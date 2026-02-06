@@ -1,8 +1,8 @@
 ﻿using DinaCSharp.Resources;
 
-using Donjon_100_Pas.Core.Datas.Enemies;
-using Donjon_100_Pas.Core.Datas.Items;
-namespace Donjon_100_Pas.Core.Datas.Events
+using Dungeon100Steps.Core.Datas.Enemies;
+using Dungeon100Steps.Core.Datas.Items;
+namespace Dungeon100Steps.Core.Datas.Events
 {
     public class CombatEvent(Enemy enemy, int rewardGold, int rewardXP, Item? loot) : Event(EventType.Combat)
     {

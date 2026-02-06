@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>Fonts.Fonts</RootNamespace>
+    <RootNamespace>Dungeon100Steps.Fonts</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="FontContent\bin\**" />

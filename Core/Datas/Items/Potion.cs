@@ -1,8 +1,8 @@
-﻿using Donjon_100_Pas.Core.Datas.Characters;
+﻿using Dungeon100Steps.Core.Datas.Characters;
 
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.Core.Datas.Items
+namespace Dungeon100Steps.Core.Datas.Items
 {
     public class Potion(string name, Texture2D texture, List<Bonus> bonuses, int stacklimit)
         : Item(name, texture, bonuses, stacklimit)

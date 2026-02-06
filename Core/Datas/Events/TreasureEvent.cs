@@ -1,6 +1,6 @@
-﻿using Donjon_100_Pas.Core.Datas.Items;
+﻿using Dungeon100Steps.Core.Datas.Items;
 
-namespace Donjon_100_Pas.Core.Datas.Events
+namespace Dungeon100Steps.Core.Datas.Events
 {
     public class TreasureEvent(Item? loot, int gold = 0, TrapEvent? trap = null, string description = "") : Event(EventType.Treasure, description)
     {

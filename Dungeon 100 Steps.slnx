@@ -1,14 +1,13 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
-  </Folder>
-  <Folder Name="/Éléments de solution/">
     <File Path="Directory.Build.props" />
   </Folder>
   <Project Path="../../Framework/DinaCSharp/DinaCSharp.csproj" />
+  <Project Path="Assets/Assets.csproj"/>
   <Project Path="Audio/Audio.csproj" />
   <Project Path="Core/Core.csproj" />
-  <Project Path="Donjon_100_Pas/Donjon_100_Pas.csproj" />
+  <Project Path="Dungeon100Steps/Dungeon100Steps.csproj" />
   <Project Path="Fonts/Fonts.csproj" />
   <Project Path="GameMechanics/GameMechanics.csproj" />
   <Project Path="UI/UI.csproj" />

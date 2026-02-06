@@ -8,14 +8,14 @@ using DinaCSharp.Services.Fonts;
 using DinaCSharp.Services.Menus;
 using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using System;
 
-namespace Donjon_100_Pas.UI.Scenes
+namespace Dungeon100Steps.UI.Scenes
 {
     public class MainMenuScene(SceneManager sceneManager) : Scene(sceneManager)
     {

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>$safeprojectname$.Audio</RootNamespace>
+    <RootNamespace>Dungeon100Steps.Audio</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="AudioContent\obj\**" />

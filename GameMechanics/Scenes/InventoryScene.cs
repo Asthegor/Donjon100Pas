@@ -1,23 +1,25 @@
 ﻿using DinaCSharp.Core;
 using DinaCSharp.Core.Utils;
+using DinaCSharp.Events;
 using DinaCSharp.Graphics;
-using DinaCSharp.Inputs;
 using DinaCSharp.Resources;
 using DinaCSharp.Services;
 using DinaCSharp.Services.Fonts;
+using DinaCSharp.Services.Menus;
 using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core;
-using Donjon_100_Pas.Core.Datas.Characters;
-using Donjon_100_Pas.Core.Datas.Items;
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core;
+using Dungeon100Steps.Core.Datas.Characters;
+using Dungeon100Steps.Core.Datas.Items;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using System;
+using System.Collections.Generic;
 
-namespace Donjon_100_Pas.GameMechanics.Scenes
+namespace Dungeon100Steps.GameMechanics.Scenes
 {
     public class InventoryScene(SceneManager sceneManager) : Scene(sceneManager)
     {
@@ -28,11 +30,13 @@ namespace Donjon_100_Pas.GameMechanics.Scenes
 
         private const float EQUIPMENT_OFFSET_X = 10f;
         private readonly Vector2 EQUIPMENT_DIMENSIONS = new Vector2(96, 96);
+        private readonly Vector2 EQUIPMENT_MARGIN = new Vector2(25, 25);
+        private const int EQUIPMENT_BORDER_THICKNESS = 4;
 
         private readonly Vector2 BUTTON_NEXT_DIMENSIONS = new Vector2(136, 80);
 
         private readonly FontManager _fontManager = ServiceLocator.Get<FontManager>(ServiceKeys.FontManager);
-        private readonly ResourceManager _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.GameResourceManager);
+        private readonly ResourceManager _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.AssetsResourceManager);
         //private readonly PlayerController _playerController = ServiceLocator.Get<PlayerController>(ProjectServiceKeys.PlayerController);
 
         private Player _player;
@@ -45,9 +49,18 @@ namespace Donjon_100_Pas.GameMechanics.Scenes
         private Text _goldText;
 
         private Group _equipmentGroup;
+        private Group _inventoryGroup;
 
         private Button _backButton;
 
+        private MenuManager _itemMenuManager;
+        private bool _isItemMenuDisplayed;
+
+        private enum ItemType { Weapon, Armor, Potion }
+        private readonly Dictionary<ItemType, MenuItem> _itemMenus = [];
+        private readonly Dictionary<Panel, Item> _itemPanels = [];
+
+        private Item _selectedItem;
         public override void Load()
         {
             _player = ServiceLocator.Get<Player>(ProjectServiceKeys.Player);
@@ -67,19 +80,38 @@ namespace Donjon_100_Pas.GameMechanics.Scenes
                                      textColor: PaletteColors.Inventory_Button_Text,
                                      backgroundImage: _resourceManager.Load<Texture2D>(GameResourceKeys.Button_Next),
                                      onClick: ReturnToCity, onHover: OnButtonNextHovered);
+
+            CreateItemMenu();
+
+            _player.Inventory.Add(WeaponFactory.Get(Rarity.Elite));
+
         }
+
         public override void Reset()
         {
+            CreateInventoryGroup();
         }
         public override void Update(GameTime gametime)
         {
+            if (_isItemMenuDisplayed)
+            {
+                _itemMenuManager.Update(gametime);
+                return;
+            }
+
             _backButton?.Update(gametime);
+            _inventoryGroup?.Update(gametime);
+
         }
         public override void Draw(SpriteBatch spritebatch)
         {
             _playerGroup?.Draw(spritebatch);
             _equipmentGroup?.Draw(spritebatch);
+            _inventoryGroup?.Draw(spritebatch);
             _backButton?.Draw(spritebatch);
+
+            if (_isItemMenuDisplayed)
+                _itemMenuManager?.Draw(spritebatch);
         }
 
 
@@ -245,6 +277,137 @@ namespace Donjon_100_Pas.GameMechanics.Scenes
         private void OnButtonNextHovered(Button button)
         {
             button.TextColor = PaletteColors.Inventory_Button_Text_Hovered;
+        }
+
+        private void CreateInventoryGroup()
+        {
+            _inventoryGroup?.Dispose();
+            _inventoryGroup = new Group();
+
+            for (int index = 0; index < _player.Inventory.Capacity; index++)
+            {
+                //var temp = _player.Inventory.Slots.GetRange(index, 1);
+                var slot = _player.Inventory.Slots != null && _player.Inventory.Slots.Count > index ? _player.Inventory.Slots[index] : null;
+                var slotGroup = CreateSlotGroup(slot);
+                slotGroup.Position = new Vector2((index % 5) * UIScaler.Scale(EQUIPMENT_DIMENSIONS.X + EQUIPMENT_MARGIN.X),
+                                                 (index / 5) * UIScaler.Scale(EQUIPMENT_DIMENSIONS.Y + EQUIPMENT_MARGIN.Y));
+                _inventoryGroup.Add(slotGroup);
+            }
+            _inventoryGroup.Position = _equipmentGroup.Position + new Vector2(0, _equipmentGroup.Dimensions.Y + UIScaler.Scale(EQUIPMENT_MARGIN.Y));
+        }
+        private Group CreateSlotGroup(Slot slot)
+        {
+            var group = new Group();
+            bool isItemPresent = slot != null && slot.Item != null;
+            if (isItemPresent)
+            {
+                var itemPanel = new Panel(position: default, dimensions: UIScaler.Scale(EQUIPMENT_DIMENSIONS),
+                                          image: slot.Item.Texture);
+                itemPanel.OnRightClicked += DisplayItemMenu;
+                _itemPanels[itemPanel] = slot.Item;
+
+                group.Add(itemPanel);
+
+                var selectionPanel = new Panel(position: default, dimensions: UIScaler.Scale(EQUIPMENT_DIMENSIONS),
+                                        backgroundcolor: PaletteColors.Inventory_Item_Selected_Background,
+                                        bordercolor: PaletteColors.Inventory_Item_Selected_Border,
+                                        thickness: 0)
+                {
+                    Visible = false
+                };
+
+                group.Add(selectionPanel);
+            }
+            var borderPanel = new Panel(position: default, dimensions: UIScaler.Scale(EQUIPMENT_DIMENSIONS),
+                                        backgroundcolor: isItemPresent ? PaletteColors.Inventory_Item_Background : PaletteColors.Inventory_NoItem_Background,
+                                        bordercolor: isItemPresent ? PaletteColors.Inventory_Item_Border : PaletteColors.Inventory_NoItem_Border,
+                                        thickness: UIScaler.Scale(EQUIPMENT_BORDER_THICKNESS));
+            group.Add(borderPanel);
+
+            return group;
+        }
+
+        private void DisplayItemMenu(object sender, PanelEventArgs e)
+        {
+            _selectedItem = _itemPanels[e.Panel];
+
+            foreach (var menuItem in _itemMenus.Values)
+                menuItem.Visible = false;
+
+            switch (_selectedItem)
+            {
+                case Weapon:
+                    _itemMenus[ItemType.Weapon].Visible = true;
+                    break;
+                case Armor:
+                    _itemMenus[ItemType.Armor].Visible = true;
+                    break;
+                case Potion:
+                    _itemMenus[ItemType.Potion].Visible = true;
+                    break;
+            }
+            _itemMenuManager.Reset(0);
+            _itemMenuManager.Visible = true;
+            _isItemMenuDisplayed = true;
+        }
+
+        private void CancelItemMenu()
+        {
+            _isItemMenuDisplayed = false;
+            _itemMenuManager.Visible = false;
+        }
+        private void CreateItemMenu()
+        {
+            _itemMenuManager = new MenuManager(cancellation: CancelItemMenu);
+
+            var font = _fontManager.Load(FontKeys.Inventory_Item_Menu);
+            var weaponMenuItem = _itemMenuManager.AddItem(font, "INVENTORY_EQUIP", PaletteColors.Inventory_ItemMenu_Text,
+                                                          selection: ItemMenuSelection, deselection: ItemMenuDeselection,
+                                                          activation: UseItem);
+            _itemMenus[ItemType.Weapon] = weaponMenuItem;
+            _itemMenus[ItemType.Armor] = weaponMenuItem;
+            weaponMenuItem.Visible = false;
+
+            var potionMenuItem = _itemMenuManager.AddItem(font, "INVENTORY_DRINK", PaletteColors.Inventory_ItemMenu_Text,
+                                                          selection: ItemMenuSelection, deselection: ItemMenuDeselection,
+                                                          activation: UseItem);
+            _itemMenus[ItemType.Potion] = potionMenuItem;
+
+        }
+
+        private MenuItem UseItem(MenuItem menuItem)
+        {
+            switch (_selectedItem)
+            {
+                case Weapon weapon:
+                    _player.EquipWeapon(weapon);
+                    _selectedItem = null;
+                    break;
+                case Armor armor:
+                    _player.EquipArmor(armor);
+                    _selectedItem = null;
+                    break;
+                case Potion potion:
+                    _player.DrinkPotion(potion);
+                    _selectedItem = null;
+                    break;
+            }
+
+            CreateInventoryGroup();
+            CancelItemMenu();
+            return menuItem;
+        }
+
+        private MenuItem ItemMenuDeselection(MenuItem menuItem)
+        {
+            menuItem.Color = PaletteColors.Inventory_ItemMenu_Text;
+            return menuItem;
+        }
+
+        private MenuItem ItemMenuSelection(MenuItem menuItem)
+        {
+            menuItem.Color = PaletteColors.Inventory_ItemMenu_Text_Selected;
+            return menuItem;
         }
     }
 }

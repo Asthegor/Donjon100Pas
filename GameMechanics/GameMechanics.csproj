@@ -1,15 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>Donjon_100_Pas.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <RootNamespace>Dungeon100Steps.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="GameContent\Enemies\00828-296921637.png" />
-    <None Remove="GameContent\Enemies\00832-296921641.png" />
-    <None Remove="GameContent\Enemies\00845-2980485536.png" />
-    <None Remove="GameContent\Enemies\00863-2980485554.png" />
-    <None Remove="GameContent\Enemies\01041-2002927979.png" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1">
       <PrivateAssets>All</PrivateAssets>
@@ -19,9 +12,5 @@
     <ProjectReference Include="..\..\..\Framework\DinaCSharp\DinaCSharp.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Fonts\Fonts.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GameContent\Weapons\Common\" />
-    <Folder Include="GameContent\Weapons\Uncommon\" />
   </ItemGroup>
 </Project>

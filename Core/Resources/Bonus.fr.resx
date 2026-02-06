@@ -133,7 +133,7 @@
     <value>Récupère {0} points de vie par attaque</value>
   </data>
   <data name="BONUS_ICE" xml:space="preserve">
-    <value>Inflige{0} dégâts de froid par attaque</value>
+    <value>Inflige {0} dégâts de froid par attaque</value>
   </data>
   <data name="BONUS_POISON" xml:space="preserve">
     <value>Inflige {0} dégâts de poison sur {1} tours</value>

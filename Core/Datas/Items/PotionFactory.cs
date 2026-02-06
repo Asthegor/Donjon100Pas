@@ -1,11 +1,11 @@
 ﻿using DinaCSharp.Resources;
 using DinaCSharp.Services;
 
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.Core.Datas.Items
+namespace Dungeon100Steps.Core.Datas.Items
 {
     public static class PotionFactory
     {
@@ -29,8 +29,8 @@ namespace Donjon_100_Pas.Core.Datas.Items
             PotionsLoaded = 0;
             TotalPotionsToLoad = KeyCounter.Count(typeof(PotionKeys)) - 1;
 
-            _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.GameResourceManager)
-                ?? throw new NullReferenceException("GameResourceManager not found");
+            _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.AssetsResourceManager)
+                ?? throw new NullReferenceException("AssetsResourceManager not found");
 
             AddPotions();
 

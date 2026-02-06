@@ -1,4 +1,4 @@
-﻿namespace Donjon_100_Pas.Core.Datas.Items
+﻿namespace Dungeon100Steps.Core.Datas.Items
 {
     public class Slot(Item item, int quantity = 1)
     {

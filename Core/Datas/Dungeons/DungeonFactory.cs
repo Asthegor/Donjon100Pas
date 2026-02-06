@@ -1,13 +1,13 @@
 ﻿using DinaCSharp.Resources;
 using DinaCSharp.Services;
 
-using Donjon_100_Pas.Core.Datas.Characters;
-using Donjon_100_Pas.Core.Datas.Enemies;
-using Donjon_100_Pas.Core.Datas.Events;
-using Donjon_100_Pas.Core.Datas.Items;
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core.Datas.Characters;
+using Dungeon100Steps.Core.Datas.Enemies;
+using Dungeon100Steps.Core.Datas.Events;
+using Dungeon100Steps.Core.Datas.Items;
+using Dungeon100Steps.Core.Keys;
 
-namespace Donjon_100_Pas.Core.Datas.Dungeons
+namespace Dungeon100Steps.Core.Datas.Dungeons
 {
     public static class DungeonFactory
     {
@@ -62,8 +62,8 @@ namespace Donjon_100_Pas.Core.Datas.Dungeons
 
         private static CombatEvent GenerateCombatEvent(int level, bool isBoss = false)
         {
-            ResourceManager resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.GameResourceManager)
-                ?? throw new InvalidOperationException("GameResourceManager not found");
+            ResourceManager resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.AssetsResourceManager)
+                ?? throw new InvalidOperationException("AssetsResourceManager not found");
 
             int roll = _random!.Next(0, 100);
 
@@ -139,8 +139,8 @@ namespace Donjon_100_Pas.Core.Datas.Dungeons
 
         public static Dungeon GenerateTutorial()
         {
-            ResourceManager resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.GameResourceManager)
-                    ?? throw new InvalidOperationException("GameResourceManager not found");
+            ResourceManager resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.AssetsResourceManager)
+                    ?? throw new InvalidOperationException("AssetsResourceManager not found");
 
             return new Dungeon(CreateTutorialEvents(resourceManager));
         }

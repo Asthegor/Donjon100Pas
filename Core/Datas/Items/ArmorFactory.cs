@@ -1,11 +1,11 @@
 ﻿using DinaCSharp.Resources;
 using DinaCSharp.Services;
 
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.Core.Datas.Items
+namespace Dungeon100Steps.Core.Datas.Items
 {
     public static class ArmorFactory
     {
@@ -29,8 +29,8 @@ namespace Donjon_100_Pas.Core.Datas.Items
             ArmorsLoaded = 0;
             TotalArmorsToLoad = KeyCounter.Count(typeof(ArmorKeys)) - 1;
 
-            _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.GameResourceManager)
-                ?? throw new NullReferenceException("GameResourceManager not found");
+            _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.AssetsResourceManager)
+                ?? throw new NullReferenceException("AssetsResourceManager not found");
             AddJunkArmors();
             AddCommonArmors();
             AddUncommonArmors();
@@ -67,37 +67,37 @@ namespace Donjon_100_Pas.Core.Datas.Items
             List<(int Weight, Armor Armor)> armors =
             [
                 (9, CreateArmor(rarity, ArmorKeys.Junk_BrokenChainmail,
-                                $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Junk_BrokenChainmail).ToUpperInvariant()}",
+                                nameof(ArmorKeys.Junk_BrokenChainmail).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 4)
                              ])),
                 (10, CreateArmor(rarity, ArmorKeys.Junk_CrackedBuckler,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Junk_CrackedBuckler).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Junk_CrackedBuckler).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 3)
                              ])),
                 (20, CreateArmor(rarity, ArmorKeys.Junk_DirtyCloak,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Junk_DirtyCloak).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Junk_DirtyCloak).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 1)
                              ])),
                 (16, CreateArmor(rarity, ArmorKeys.Junk_ImprovisedHelmet,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Junk_ImprovisedHelmet).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Junk_ImprovisedHelmet).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 1)
                              ])),
                 (8, CreateArmor(rarity, ArmorKeys.Junk_PatchedPants,
-                                $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Junk_PatchedPants).ToUpperInvariant()}",
+                                nameof(ArmorKeys.Junk_PatchedPants).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 1)
                              ])),
                 (15, CreateArmor(rarity, ArmorKeys.Junk_RottenWoodShield,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Junk_RottenWoodShield).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Junk_RottenWoodShield).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 2)
                              ])),
                 (6, CreateArmor(rarity, ArmorKeys.Junk_RustyChestplate,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Junk_RustyChestplate).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Junk_RustyChestplate).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 4)
                              ])),
@@ -110,47 +110,47 @@ namespace Donjon_100_Pas.Core.Datas.Items
             List<(int Weight, Armor armor)> armors =
             [
                 (6, CreateArmor(rarity, ArmorKeys.Common_BronzeBracers,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_BronzeBracers).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Common_BronzeBracers).ToUpperInvariant(),
                                  [
                                      new Bonus(BonusType.Defense, "BONUS_DEFENSE", 5)
                                  ])),
                 (7, CreateArmor(rarity, ArmorKeys.Common_ChainmailCoif,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_ChainmailCoif).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Common_ChainmailCoif).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 6)
                              ])),
                 (5, CreateArmor(rarity, ArmorKeys.Common_GuardArmour,
-                                $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_GuardArmour).ToUpperInvariant()}",
+                                nameof(ArmorKeys.Common_GuardArmour).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 4)
                              ])),
                 (6, CreateArmor(rarity, ArmorKeys.Common_IronHelmet,
-                                $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_IronHelmet).ToUpperInvariant()}",
+                                nameof(ArmorKeys.Common_IronHelmet).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 5)
                              ])),
                 (2, CreateArmor(rarity, ArmorKeys.Common_LeatherVest,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_LeatherVest).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Common_LeatherVest).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 4)
                              ])),
                 (6, CreateArmor(rarity, ArmorKeys.Common_LightShield,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_LightShield).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Common_LightShield).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 6)
                              ])),
                 (5, CreateArmor(rarity, ArmorKeys.Common_PaddedJacket,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_PaddedJacket).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Common_PaddedJacket).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 5)
                              ])),
                 (3, CreateArmor(rarity, ArmorKeys.Common_ReinforcedGloves,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_ReinforcedGloves).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Common_ReinforcedGloves).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 7)
                              ])),
                 (4, CreateArmor(rarity, ArmorKeys.Common_SoldierBoots,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Common_SoldierBoots).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Common_SoldierBoots).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 7)
                              ])),
@@ -163,27 +163,27 @@ namespace Donjon_100_Pas.Core.Datas.Items
             List<(int Weight, Armor)> armors =
             [
                 (10, CreateArmor(rarity, ArmorKeys.Uncommon_KnightGauntlets,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Uncommon_KnightGauntlets).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Uncommon_KnightGauntlets).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 10)
                              ])),
                 (2, CreateArmor(rarity, ArmorKeys.Uncommon_LeatherArmor,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Uncommon_LeatherArmor).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Uncommon_LeatherArmor).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 14)
                              ])),
                 (6, CreateArmor(rarity, ArmorKeys.Uncommon_ScoutCloak,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Uncommon_ScoutCloak).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Uncommon_ScoutCloak).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 9)
                              ])),
                 (9, CreateArmor(rarity, ArmorKeys.Uncommon_SteelBreastplate,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Uncommon_SteelBreastplate).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Uncommon_SteelBreastplate).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 18)
                              ])),
                 (7, CreateArmor(rarity, ArmorKeys.Uncommon_SteelHelmet,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Uncommon_SteelHelmet).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Uncommon_SteelHelmet).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 10)
                              ])),
@@ -196,19 +196,19 @@ namespace Donjon_100_Pas.Core.Datas.Items
             List<(int Weight, Armor)> armors =
             [
                 (15, CreateArmor(rarity, ArmorKeys.Rare_DragonScaleShield,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Rare_DragonScaleShield).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Rare_DragonScaleShield).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Attack, "BONUS_ATTACK", 19),
                                 new Bonus(BonusType.Fire, "BONUS_RESISTFIRE", percentage: 8)
                              ])),
                 (10, CreateArmor(rarity, ArmorKeys.Rare_EnchantedRobe,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Rare_EnchantedRobe).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Rare_EnchantedRobe).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Defense, "BONUS_DEFENSE", 14),
                                 new Bonus(BonusType.Mana, "BONUS_MANA", 5)
                              ])),
                 (10, CreateArmor(rarity, ArmorKeys.Rare_MithrilChainmail,
-                                 $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Rare_MithrilChainmail).ToUpperInvariant()}",
+                                 nameof(ArmorKeys.Rare_MithrilChainmail).ToUpperInvariant(),
                              [
                                 new Bonus(BonusType.Attack, "BONUS_ATTACK", 16),
                                 new Bonus(BonusType.Ice, "BONUS_ICE", 5)
@@ -222,20 +222,20 @@ namespace Donjon_100_Pas.Core.Datas.Items
             List<(int Weight, Armor)> armors =
             [
                 (20, CreateArmor(rarity, ArmorKeys.Elite_AetherPlate,
-                                  $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Elite_AetherPlate).ToUpperInvariant()}",
+                                  nameof(ArmorKeys.Elite_AetherPlate).ToUpperInvariant(),
                                  [
                                     new Bonus(BonusType.Defense, "BONUS_DEFENSE", 50),
                                     new Bonus(BonusType.ResistBleed, "BONUS_RESISTBLEED", percentage: 50),
                                     new Bonus(BonusType.ResistPoison, "BONUS_RESISTPOISON", percentage: 50),
                                  ])),
                 (20, CreateArmor(rarity, ArmorKeys.Elite_PhoenixEmbrace,
-                                  $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Elite_PhoenixEmbrace).ToUpperInvariant()}",
+                                  nameof(ArmorKeys.Elite_PhoenixEmbrace).ToUpperInvariant(),
                                  [
                                     new Bonus(BonusType.Defense, "BONUS_DEFENSE", 40),
                                     new Bonus(BonusType.ResistFire, "BONUS_RESISTFIRE", percentage : 75)
                                  ])),
                 (20, CreateArmor(rarity, ArmorKeys.Elite_VoidStalkerGarb,
-                                  $"{rarity.ToString().ToUpperInvariant()}_{nameof(ArmorKeys.Elite_VoidStalkerGarb).ToUpperInvariant()}",
+                                  nameof(ArmorKeys.Elite_VoidStalkerGarb).ToUpperInvariant(),
                                  [
                                     new Bonus(BonusType.Defense, "BONUS_DEFENSE", 31),
                                     new Bonus(BonusType.Mana, "BONUS_MANA", 50),

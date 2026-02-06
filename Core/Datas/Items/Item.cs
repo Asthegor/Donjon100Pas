@@ -2,7 +2,7 @@
 
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.Core.Datas.Items
+namespace Dungeon100Steps.Core.Datas.Items
 {
 
     public abstract class Item(string name, Texture2D? texture, List<Bonus> bonuses, int stackLimit)

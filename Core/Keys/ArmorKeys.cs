@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Donjon_100_Pas.Core.Keys
+namespace Dungeon100Steps.Core.Keys
 {
     public static class ArmorKeys
     {

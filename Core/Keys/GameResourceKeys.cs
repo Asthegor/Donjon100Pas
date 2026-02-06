@@ -1,7 +1,7 @@
 ﻿using DinaCSharp.Resources;
 using DinaCSharp.Services;
 
-namespace Donjon_100_Pas.Core.Keys
+namespace Dungeon100Steps.Core.Keys
 {
     public static class GameResourceKeys
     {
@@ -16,6 +16,7 @@ namespace Donjon_100_Pas.Core.Keys
         #endregion
 
         public static readonly Key<ResourceTag> Button_Next = Key<ResourceTag>.FromString("Button_Next");
+        public static readonly Key<ResourceTag> Slot_Template_Default = Key<ResourceTag>.FromString("Inventory/Slot_Template_Default");
 
         #region Cité
         public static readonly Key<ResourceTag> City_Background = Key<ResourceTag>.FromString("City/Background");

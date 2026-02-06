@@ -1,8 +1,8 @@
-﻿using Donjon_100_Pas.Core;
+﻿using Dungeon100Steps.Core;
 
 using System;
 
-namespace Donjon_100_Pas.Core.Datas.Events
+namespace Dungeon100Steps.Core.Datas.Events
 {
     public class DungeonEndedEventArgs(EventResult result) : EventArgs
     {

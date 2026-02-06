@@ -1,7 +1,7 @@
 ﻿using DinaCSharp.Services;
 using DinaCSharp.Services.Scenes;
 
-namespace Donjon_100_Pas.Core.Keys
+namespace Dungeon100Steps.Core.Keys
 {
     public class ProjectSceneKeys
     {

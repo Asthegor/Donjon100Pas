@@ -1,4 +1,4 @@
-﻿namespace Donjon_100_Pas.Core.Datas.Events
+﻿namespace Dungeon100Steps.Core.Datas.Events
 {
     public abstract class Event(EventType eventtype, string description = "")
     {

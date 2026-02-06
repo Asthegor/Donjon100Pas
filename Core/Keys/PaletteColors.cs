@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace Donjon_100_Pas.Core.Keys
+namespace Dungeon100Steps.Core.Keys
 {
     public class PaletteColors
     {
@@ -126,6 +126,14 @@ namespace Donjon_100_Pas.Core.Keys
         #region Écran de l'inventaire
         public static readonly Color Inventory_Button_Text = Color.Black;
         public static readonly Color Inventory_Button_Text_Hovered = Color.Orange;
+        public static readonly Color Inventory_Item_Selected_Background = Color.Transparent;
+        public static readonly Color Inventory_Item_Selected_Border = Color.Gold;
+        public static readonly Color Inventory_Item_Background = Color.Transparent;
+        public static readonly Color Inventory_Item_Border = Color.Blue;
+        public static readonly Color Inventory_NoItem_Background = Color.White * 0.5f;
+        public static readonly Color Inventory_NoItem_Border = Color.White;
+        public static readonly Color Inventory_ItemMenu_Text = Color.White;
+        public static readonly Color Inventory_ItemMenu_Text_Selected = Color.Gold;
         #endregion
     }
 }

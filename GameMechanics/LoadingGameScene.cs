@@ -4,12 +4,12 @@ using DinaCSharp.Services;
 using DinaCSharp.Services.Fonts;
 using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.GameMechanics
+namespace Dungeon100Steps.GameMechanics
 {
     public class LoadingGameScene(SceneManager sceneManager) : Scene(sceneManager), ILoadingScreen
     {

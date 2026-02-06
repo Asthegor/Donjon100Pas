@@ -2,7 +2,7 @@
 
 using System.Transactions;
 
-namespace Donjon_100_Pas.Core.Datas.Items
+namespace Dungeon100Steps.Core.Datas.Items
 {
     public class Bonus(BonusType type, string translationkey = "", int amount = 0, int percentage = 0, int duration = 1)
     {

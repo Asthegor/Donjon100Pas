@@ -1,11 +1,11 @@
 ﻿using DinaCSharp.Events;
 
-using Donjon_100_Pas.Core.Datas.Characters;
-using Donjon_100_Pas.Core.Datas.Items;
+using Dungeon100Steps.Core.Datas.Characters;
+using Dungeon100Steps.Core.Datas.Items;
 
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.Core.Datas.Enemies
+namespace Dungeon100Steps.Core.Datas.Enemies
 {
     public class Enemy(string name, Texture2D texture, int attack, int defense, int health, int mana = 0)
         : Character(name, texture, attack, defense, health, mana)

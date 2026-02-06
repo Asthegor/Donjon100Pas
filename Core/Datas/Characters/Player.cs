@@ -1,8 +1,10 @@
-﻿using Donjon_100_Pas.Core.Datas.Items;
+﻿using Dungeon100Steps.Core.Datas.Items;
 
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.Core.Datas.Characters
+using System.Collections.Concurrent;
+
+namespace Dungeon100Steps.Core.Datas.Characters
 {
     public class Player(string name, Texture2D texture, int attack, int defense, int health, int mana, Texture2D bagtexture)
         : Character(name, texture, attack, defense, health, mana)
@@ -40,21 +42,21 @@ namespace Donjon_100_Pas.Core.Datas.Characters
         public Inventory Inventory { get; set; } = new Inventory(bagtexture);
         public override void EquipWeapon(Weapon weapon)
         {
-            if (Weapon != null)
-            {
-                Inventory?.Remove(weapon);
-                Inventory?.Add(Weapon);
-            }
+            Weapon? oldWeapon = Weapon;
+            Inventory?.Remove(weapon);
             Weapon = weapon;
+
+            if (oldWeapon != null)
+                Inventory?.Add(oldWeapon);
         }
         public override void EquipArmor(Armor armor)
         {
-            if (Armor != null)
-            {
-                Inventory?.Remove(armor);
-                Inventory?.Add(Armor);
-            }
+            Armor? oldArmor = Armor;
+            Inventory?.Remove(armor);
             Armor = armor;
+
+            if (oldArmor != null)
+                Inventory?.Add(oldArmor);
         }
         public void GetExperience(int xp)
         {
@@ -82,6 +84,14 @@ namespace Donjon_100_Pas.Core.Datas.Characters
         {
             Inventory.Remove(potion);
             potion.Drink(this);
+        }
+        public void EquipBag(Bag bag)
+        {
+            if (bag.MaxCapacity > Inventory.Capacity)
+            {
+                Inventory.Texture = bag.Texture;
+                Inventory.Capacity = bag.MaxCapacity;
+            }
         }
 
     }

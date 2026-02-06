@@ -8,10 +8,10 @@ using DinaCSharp.Services.Save;
 using DinaCSharp.Services.Scenes;
 using DinaCSharp.Services.Screen;
 
-using Donjon_100_Pas.Core.Datas;
-using Donjon_100_Pas.Core.Keys;
-using Donjon_100_Pas.GameMechanics;
-using Donjon_100_Pas.UI;
+using Dungeon100Steps.Core.Datas;
+using Dungeon100Steps.Core.Keys;
+using Dungeon100Steps.GameMechanics;
+using Dungeon100Steps.UI;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -19,9 +19,9 @@ using Microsoft.Xna.Framework.Input;
 
 using System.Linq;
 
-namespace Donjon_100_Pas
+namespace Dungeon100Steps
 {
-    public class Donjon_100_PasGame : Game
+    public class Dungeon100Steps : Game
     {
         private readonly GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
@@ -29,7 +29,7 @@ namespace Donjon_100_Pas
         private SceneManager _sceneManager;
         private bool _isReadyToDraw;
 
-        public Donjon_100_PasGame()
+        public Dungeon100Steps()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -152,8 +152,8 @@ namespace Donjon_100_Pas
             ResourceManager uiResourceManager = new ResourceManager(Services, "UIContent");
             ServiceLocator.Register(ProjectServiceKeys.UIResourceManager, uiResourceManager);
 
-            ResourceManager gameResourceManager = new ResourceManager(Services, "GameContent");
-            ServiceLocator.Register(ProjectServiceKeys.GameResourceManager, gameResourceManager);
+            ResourceManager assetsResourceManager = new ResourceManager(Services, "AssetsContent");
+            ServiceLocator.Register(ProjectServiceKeys.AssetsResourceManager, assetsResourceManager);
         }
 
         private static void RegisterLocalizations()

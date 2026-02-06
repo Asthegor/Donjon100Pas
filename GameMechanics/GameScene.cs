@@ -1,18 +1,18 @@
 ﻿using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core;
-using Donjon_100_Pas.Core.Datas.Events;
-using Donjon_100_Pas.Core.Datas.Items;
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core;
+using Dungeon100Steps.Core.Datas.Events;
+using Dungeon100Steps.Core.Datas.Items;
+using Dungeon100Steps.Core.Keys;
 
-using Donjon_100_Pas.GameMechanics.Scenes;
-using Donjon_100_Pas.GameMechanics.Scenes.City;
-using Donjon_100_Pas.GameMechanics.Scenes.Tutorial;
+using Dungeon100Steps.GameMechanics.Scenes;
+using Dungeon100Steps.GameMechanics.Scenes.City;
+using Dungeon100Steps.GameMechanics.Scenes.Tutorial;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Donjon_100_Pas.GameMechanics
+namespace Dungeon100Steps.GameMechanics
 {
     public class GameScene(SceneManager sceneManager) : Scene(sceneManager)
     {
@@ -22,7 +22,7 @@ namespace Donjon_100_Pas.GameMechanics
 
         public override void Load()
         {
-            _subSceneManager = SceneManager.CreateNewInstance("GameContent");
+            _subSceneManager = SceneManager.CreateNewInstance("AssetsContent");
 
             ResetLoadingScreen("LOADING_WEAPONS");
             WeaponFactory.OnWeaponLoaded += OnWeaponLoadProgress;
@@ -46,7 +46,7 @@ namespace Donjon_100_Pas.GameMechanics
 
             _loadingFinished = true;
 
-            _subSceneManager.SetCurrentScene(ProjectSceneKeys.SelectPlayerScene);
+            _subSceneManager.SetCurrentScene(ProjectSceneKeys.TutorialSkipScene);
 
             //_subSceneManager.AddScene(ProjectSceneKeys.TestScene, () => new TestScene(_subSceneManager));
             //_subSceneManager.SetCurrentScene(ProjectSceneKeys.TestScene);

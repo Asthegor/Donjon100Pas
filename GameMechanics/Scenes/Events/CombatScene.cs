@@ -6,12 +6,12 @@ using DinaCSharp.Services.Fonts;
 using DinaCSharp.Services.Menus;
 using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core;
-using Donjon_100_Pas.Core.Datas.Characters;
-using Donjon_100_Pas.Core.Datas.Enemies;
-using Donjon_100_Pas.Core.Datas.Events;
-using Donjon_100_Pas.Core.Datas.Items;
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core;
+using Dungeon100Steps.Core.Datas.Characters;
+using Dungeon100Steps.Core.Datas.Enemies;
+using Dungeon100Steps.Core.Datas.Events;
+using Dungeon100Steps.Core.Datas.Items;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Donjon_100_Pas.GameMechanics.Scenes.Events
+namespace Dungeon100Steps.GameMechanics.Scenes.Events
 {
     public class CombatScene(SceneManager sceneManager) : Scene(sceneManager)
     {

@@ -1,7 +1,7 @@
 ﻿using DinaCSharp.Services;
 using DinaCSharp.Services.Fonts;
 
-namespace Donjon_100_Pas.Core.Keys
+namespace Dungeon100Steps.Core.Keys
 {
     public class FontKeys
     {
@@ -50,6 +50,7 @@ namespace Donjon_100_Pas.Core.Keys
 
         #region Écran de l'inventaire
         public static readonly Key<FontTag> Inventory_Button_Text = Key<FontTag>.FromString("Inventory_Button_Text");
+        public static readonly Key<FontTag> Inventory_Item_Menu = Key<FontTag>.FromString("Inventory_Item_Menu");
         #endregion
     }
 }

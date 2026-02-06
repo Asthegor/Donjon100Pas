@@ -1,4 +1,4 @@
-﻿namespace Donjon_100_Pas.Core
+﻿namespace Dungeon100Steps.Core
 {
     public enum HeroClass { Warrior, Mage, Thief }
     public enum Genre { Female, Male }

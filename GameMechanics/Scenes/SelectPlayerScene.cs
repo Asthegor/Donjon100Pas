@@ -7,9 +7,9 @@ using DinaCSharp.Services;
 using DinaCSharp.Services.Fonts;
 using DinaCSharp.Services.Scenes;
 
-using Donjon_100_Pas.Core;
-using Donjon_100_Pas.Core.Datas.Characters;
-using Donjon_100_Pas.Core.Keys;
+using Dungeon100Steps.Core;
+using Dungeon100Steps.Core.Datas.Characters;
+using Dungeon100Steps.Core.Keys;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -17,7 +17,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 
-namespace Donjon_100_Pas.GameMechanics.Scenes
+namespace Dungeon100Steps.GameMechanics.Scenes
 {
     public class SelectPlayerScene(SceneManager sceneManager) : Scene(sceneManager)
     {
@@ -29,7 +29,7 @@ namespace Donjon_100_Pas.GameMechanics.Scenes
         private readonly Vector2 BUTTONS_DIMENSIONS = new Vector2(150, 50);
 
         private FontManager _fontManager = ServiceLocator.Get<FontManager>(ServiceKeys.FontManager);
-        private readonly ResourceManager _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.GameResourceManager);
+        private readonly ResourceManager _resourceManager = ServiceLocator.Get<ResourceManager>(ProjectServiceKeys.AssetsResourceManager);
 
         private readonly Random _random = new Random();
 
@@ -313,7 +313,7 @@ namespace Donjon_100_Pas.GameMechanics.Scenes
         }
         private void BackToMainMenu(Button button)
         {
-            SetCurrentScene(ProjectSceneKeys.MainMenu);
+            SetCurrentScene(ProjectSceneKeys.GameScene);
         }
         private void ContinueToGame(Button button)
         {
@@ -328,7 +328,7 @@ namespace Donjon_100_Pas.GameMechanics.Scenes
             Player player = PlayerFactory.CreatePlayer(selectedHeroClass, selectedGenre, playerTexture, bagTexture);
             ServiceLocator.Register(ProjectServiceKeys.Player, player);
 
-            SetCurrentScene(ProjectSceneKeys.TutorialSkipScene);
+            SetCurrentScene(ProjectSceneKeys.CityScene);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Donjon_100_Pas.Core.Datas
+namespace Dungeon100Steps.Core.Datas
 {
     public class Progression
     {

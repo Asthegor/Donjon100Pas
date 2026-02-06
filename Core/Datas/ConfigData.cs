@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace Donjon_100_Pas.Core.Datas
+namespace Dungeon100Steps.Core.Datas
 {
     [Serializable]
     public class ConfigData

@@ -48,6 +48,13 @@
 /processorParam:TextureFormat=Compressed
 /build:1080p/Inventory_Button_Text.spritefont
 
+#begin 1080p/Inventory_Item_Menu.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:1080p/Inventory_Item_Menu.spritefont
+
 #begin 1080p/Loading_Message.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -187,6 +194,13 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:1440p/Inventory_Button_Text.spritefont
+
+#begin 1440p/Inventory_Item_Menu.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:1440p/Inventory_Item_Menu.spritefont
 
 #begin 1440p/Loading_Message.spritefont
 /importer:FontDescriptionImporter
@@ -328,6 +342,13 @@
 /processorParam:TextureFormat=Compressed
 /build:2160p/Inventory_Button_Text.spritefont
 
+#begin 2160p/Inventory_Item_Menu.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:2160p/Inventory_Item_Menu.spritefont
+
 #begin 2160p/Loading_Message.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -468,6 +489,13 @@
 /processorParam:TextureFormat=Compressed
 /build:720p/Inventory_Button_Text.spritefont
 
+#begin 720p/Inventory_Item_Menu.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:720p/Inventory_Item_Menu.spritefont
+
 #begin 720p/Loading_Message.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -607,6 +635,13 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:900p/Inventory_Button_Text.spritefont
+
+#begin 900p/Inventory_Item_Menu.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:900p/Inventory_Item_Menu.spritefont
 
 #begin 900p/Loading_Message.spritefont
 /importer:FontDescriptionImporter
